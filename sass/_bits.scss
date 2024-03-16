@@ -1,0 +1,137 @@
+//*==============================================================================
+//** Colour, font stacks, media queries, that kind of thing  **
+//*==============================================================================
+
+//*=========================================
+//** Media Queries   **
+//*=========================================
+
+//********** Max Width **********
+
+@mixin breakpoint($point) {
+  @if unitless($point) {
+    $point: 1px * $point;
+  }
+  @media (max-width: $point) {
+    @content;
+  }
+}
+
+//*=========================================
+//** Layout **
+//*=========================================
+
+//* Flex Mixin
+@mixin flex($direction) {
+  display: flex;
+  flex-direction: $direction;
+}
+
+//*=========================================
+//** Typography **
+//*=========================================
+
+//* Font Stacks
+@mixin main-font-stack {
+  font-family: 'futura-pt', sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+@mixin heading-font-stack {
+  font-family: roboto, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+//********** Sizing & spacing **********
+
+//* Header
+$header-spacing-large: 10rem;
+$header-spacing-medium: 7.5rem;
+$header-spacing-small: 5rem;
+$header-spacing-tiny: 2.5rem;
+
+//* Headings
+
+// Sizing
+
+// Spacing
+$heading-spacing-large: 20rem;
+$heading-spacing-medium: 15rem;
+$heading-spacing-small: 10rem;
+
+//* Sections
+$section-spacing-super-large: 40rem;
+$section-spacing-extra-large: 30rem;
+$section-spacing-large: 20rem;
+$section-spacing-medium: 15rem;
+$section-spacing-small: 10rem;
+$section-spacing-smaller: 7.5rem;
+$section-spacing-tiny: 5rem;
+$section-spacing-super-tiny: 2.5rem;
+
+//* Paragraphs
+
+// Font sizing
+$font-size-extra-large: 7.5rem;
+$font-size-large: 5rem;
+$font-size-medium: 3.8rem;
+$font-size-small: 2.5rem;
+$font-size-extra-small: 1.6rem;
+
+// Spacing
+$paragraph-spacing-large: 5rem;
+$paragraph-spacing-medium: 2.5rem;
+$paragraph-spacing-small: 1.25rem;
+
+//*=========================================
+//** Colours  **
+//*=========================================
+
+// Main brand Colours
+$background-colour-light: #eef7f3;
+$background-colour-dark: #144884;
+$background-colour-one: #eef7f3;
+$background-colour-two: #bbe0ce;
+$background-colour-three: #144884;
+
+// Main Font Colours
+$font-colour-light: #eef7f3;
+$font-colour-dark: #144884;
+
+// Link Colours
+$link-colour: #3c3cf6;
+
+//*=========================================
+//** Effects and Animation  **
+//*=========================================
+
+//********** Scrollbar Mixin **********
+
+@mixin styled-scrollbar(
+  $size,
+  $color,
+  $background-colour,
+  $track-shadow-colour
+) {
+  &::-webkit-scrollbar {
+    width: $size;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: scale-color($color, $lightness: 20%);
+    position: relative;
+    bottom: 10rem;
+    border-radius: 10px;
+
+    &:hover {
+      background-color: $color;
+    }
+  }
+
+  &::-webkit-scrollbar-track {
+    background: $background-colour;
+    box-shadow: inset 0 0 3px $track-shadow-colour;
+  }
+}

@@ -1,0 +1,21 @@
+<section class="services-link-section scrolltrigger-refresh-target">
+ <div class="homepage-services-flex-wrapper">
+   <img class="homepage-services-link-section-image simple-fade-up" itemprop="image" loading="lazy" src="<perch:content id="servicesLinkImage" type="image" width="1800" label="Servces Link image" help="Image must be at least 1800px wide">" alt="<perch:content id="altOne" type="text" label="Image Description" help="Short description of image for SEO and screen readers">"
+   sizes="(max-width: 1500px) 100vw, 50vw"
+   srcset="<perch:content type="image" id="servicesLinkImage" width="1800"> 1800w,
+   <perch:content type="image" id="servicesLinkImage" width="1400"> 1400w,
+   <perch:content type="image" id="servicesLinkImage" width="1000"> 1000w,
+   <perch:content type="image" id="servicesLinkImage" width="600"> 600w,
+   <perch:content type="image" id="servicesLinkImage" width="300"> 300w">
+   <div class="services-link-text-wrapper">
+     <h2 class="homepage-services-link-text simple-fade-right">
+       <a href="/services" class="homepage-services-link">
+         <perch:content id="servicesLinkText" type="text" label="Homepage Services Link Text" required>
+       </a>
+     </h2>
+    </div>
+ </div>
+ <p class="services-find-out-more-paragraph main-body-font simple-fade-up">
+   <perch:content id="servicesLinkTextarea" type="textarea" size="m" label="Services Section Additional Text" required>
+ </p>
+</section>

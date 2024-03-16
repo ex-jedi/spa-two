@@ -1,0 +1,21 @@
+<div class="pages-content-wrapper">
+  <perch:blocks>
+    <perch:block type="pagesBlocks" label="Page Content Block" icon="edit">
+      <div class="pages-block-wrapper scrolltrigger-refresh-target">
+        <h2 class="pages-subtitle main-body-font simple-fade-right">
+          <perch:content id="blockHeading" type="text" label="Block Heading" required>
+        </h2>
+        <div class="block-textwrapper main-body-font simple-fade-right">
+          <perch:content id="blockText" type="textarea" editor="redactor" label="Block Text" required html>
+        </div>
+        <img class="pages-block-image simple-fade-up" itemprop="image" loading="lazy" src="<perch:content id="blockImage" type="image" width="2000" height="2000" label="Block Image" help="Image must be at least 2000px wide" crop>" alt="<perch:content id="altOne" type="text" label="Image Description" help="Short description of image for SEO and screen readers">"
+        sizes="(max-width: 1000px) 100vw, 60vw"
+        srcset="<perch:content type="image" id="blockImage" width="2000" height="2000" crop> 2000w,
+        <perch:content type="image" id="blockImage" width="1200" height="1200" crop> 1200w,
+        <perch:content type="image" id="blockImage" width="800" height="800" crop> 800w,
+        <perch:content type="image" id="blockImage" width="600" height="600" crop> 600w,
+        <perch:content type="image" id="blockImage" width="300" height="300" crop> 300w">
+      </div>
+    </perch:block>
+  </perch:blocks>
+</div>

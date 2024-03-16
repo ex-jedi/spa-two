@@ -1,0 +1,8 @@
+#General Stuff
+node_modules
+.vscode
+.htaccess
+
+#Perch Files
+perch/resources/
+perch/config/config.php

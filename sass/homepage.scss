@@ -1,0 +1,346 @@
+// *=======================================================================================
+// ** Imports & Mixins  **
+// *=======================================================================================
+
+//*=========================================
+//** Imports **
+//*=========================================
+
+@use 'bits' as *; //Contains variables, media queries mixins etc.
+
+//*=========================================
+//** Header **
+//*=========================================
+
+.header-content {
+  padding: $header-spacing-large $header-spacing-large 0;
+  margin-left: 100px;
+  width: calc(100% - 100px);
+  color: $font-colour-dark;
+
+  a {
+    text-decoration: underline;
+    color: inherit;
+  }
+
+  @include breakpoint(1100) {
+    padding: $header-spacing-medium $header-spacing-large 0;
+    width: 100%;
+    margin-left: 0;
+  }
+
+  @include breakpoint(750) {
+    padding: $header-spacing-small $header-spacing-tiny 0;
+    margin-left: 0;
+  }
+}
+
+.homepage-header-main-heading {
+  color: $font-colour-dark;
+  font-size: $font-size-large;
+  width: 100%;
+  max-width: 1000px;
+  margin-bottom: $header-spacing-large;
+
+  @include breakpoint(1100) {
+    margin-bottom: $header-spacing-medium;
+  }
+
+  @include breakpoint(1100) {
+    margin-bottom: $header-spacing-small;
+  }
+
+  @include breakpoint(750) {
+    font-size: $font-size-medium;
+  }
+}
+
+.header-content-flex-wrapper {
+  @include flex(row);
+  margin: 0 $header-spacing-large;
+  align-items: center;
+
+  @include breakpoint(1600) {
+    @include flex(column);
+  }
+
+  @include breakpoint(1300) {
+    margin: 0;
+  }
+}
+
+.homepage-header-image {
+  flex: 0 1 auto;
+  width: 50%;
+  height: 100%;
+  margin-right: $header-spacing-large;
+  object-fit: cover;
+
+  @include breakpoint(1600) {
+    width: 100%;
+    max-height: 98vh;
+    object-fit: contain;
+    aspect-ratio: 1/1;
+    margin: 0 auto $section-spacing-large;
+  }
+
+  @include breakpoint(1100) {
+    margin: 0 auto $section-spacing-medium;
+  }
+
+  @include breakpoint(750) {
+    margin: 0 auto $section-spacing-small;
+  }
+}
+
+.header-text-area {
+  flex: 0 1 auto;
+  width: 50%;
+
+  @include breakpoint(1600) {
+    width: 100%;
+  }
+}
+
+//*=========================================
+//** Services Link Section **
+//*=========================================
+
+.services-link-section {
+  @include flex(column);
+  background-color: $background-colour-one;
+  padding-bottom: 0;
+  width: calc(100% - 100px);
+
+  @include breakpoint(1100) {
+    width: 100%;
+  }
+}
+
+.homepage-services-flex-wrapper {
+  @include flex(row);
+  padding-bottom: $section-spacing-large;
+
+  @include breakpoint(1100) {
+    padding-bottom: $section-spacing-medium;
+  }
+
+  @include breakpoint(750) {
+    padding-bottom: $section-spacing-small;
+    @include flex(column);
+  }
+}
+
+.homepage-services-link-section-image {
+  flex: 0 1 auto;
+  width: 50%;
+  height: 100%;
+
+  @include breakpoint(750) {
+    width: 100%;
+  }
+}
+
+.services-link-text-wrapper {
+  @include flex(column);
+  justify-content: center;
+  align-items: center;
+  flex: 0 1 auto;
+  width: 50%;
+  height: auto;
+  background-color: $background-colour-three;
+
+  @include breakpoint(750) {
+    width: 100%;
+    aspect-ratio: 1/1;
+  }
+}
+
+.homepage-services-link-text {
+  font-size: $font-size-large;
+  color: $font-colour-light;
+  margin: 0 auto;
+  width: 40%;
+
+  @include breakpoint(1600) {
+    font-size: $font-size-medium;
+  }
+
+  @include breakpoint(1100) {
+    font-size: $font-size-small;
+  }
+
+  @include breakpoint(750) {
+    font-size: $font-size-medium;
+  }
+}
+
+.homepage-services-link {
+  color: $font-colour-light;
+  margin: 0 auto;
+}
+
+.services-find-out-more-paragraph {
+  width: 50%;
+  padding-bottom: $section-spacing-large;
+  color: $font-colour-dark;
+
+  @include breakpoint(1300) {
+    width: 75%;
+  }
+
+  @include breakpoint(1100) {
+    padding-bottom: $section-spacing-medium;
+  }
+
+  @include breakpoint(750) {
+    padding-bottom: $section-spacing-small;
+    width: auto;
+    margin: 0 $section-spacing-super-tiny 0;
+  }
+}
+
+//*=========================================
+//** Gallery **
+//*=========================================
+
+.homepage-gallery-section {
+  background-color: $background-colour-one;
+  padding-block-start: 0;
+  height: auto;
+  margin-left: 100px;
+  width: calc(100% - 100px);
+
+  @include breakpoint(1100) {
+    margin-left: 0;
+    width: 100%;
+  }
+}
+
+.homepage-gallery-image-wrapper {
+  margin-inline: $paragraph-spacing-large;
+  height: auto;
+  margin-block-end: $paragraph-spacing-medium;
+
+  @include breakpoint(1100) {
+    width: 95vw;
+  }
+}
+
+.homepage-gallery-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  aspect-ratio: 1/1;
+}
+
+//  Flickity v2.3.0
+// https://flickity.metafizzy.co
+
+.flickity-enabled {
+  position: relative;
+}
+
+.flickity-enabled:focus {
+  outline: none;
+}
+
+.flickity-viewport {
+  overflow: hidden;
+  position: relative;
+  height: 100%;
+}
+
+.flickity-slider {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+/* draggable */
+
+.flickity-enabled.is-draggable {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.flickity-enabled.is-draggable .flickity-viewport {
+  cursor: move;
+  cursor: -webkit-grab;
+  cursor: grab;
+}
+
+.flickity-enabled.is-draggable .flickity-viewport.is-pointer-down {
+  cursor: -webkit-grabbing;
+  cursor: grabbing;
+}
+
+/* ---- page dots ---- */
+
+.flickity-page-dots {
+  position: absolute;
+  width: 100%;
+  bottom: -25px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  text-align: center;
+  line-height: 1;
+}
+
+.flickity-rtl .flickity-page-dots {
+  direction: rtl;
+}
+
+.flickity-page-dots .dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin: 0 8px;
+  background: #333;
+  border-radius: 50%;
+  opacity: 0.25;
+  cursor: pointer;
+}
+
+.flickity-page-dots .dot.is-selected {
+  opacity: 1;
+}
+
+//*=========================================
+//** Testimonials **
+//*=========================================
+
+.homepage-testimonials-section {
+  background-color: $background-colour-three;
+  color: $font-colour-light;
+  padding-inline: $section-spacing-super-large;
+
+  a {
+    text-decoration: underline;
+    color: inherit;
+  }
+
+  @include breakpoint(1600) {
+    padding-inline: $section-spacing-extra-large;
+  }
+
+  @include breakpoint(1300) {
+    padding-inline: $section-spacing-large;
+  }
+
+  @include breakpoint(1100) {
+    padding-inline: $section-spacing-medium;
+  }
+
+  @include breakpoint(900) {
+    padding-inline: $section-spacing-small;
+  }
+
+  @include breakpoint(750) {
+    padding-inline: $section-spacing-super-tiny;
+  }
+}

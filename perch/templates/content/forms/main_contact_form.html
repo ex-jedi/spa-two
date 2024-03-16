@@ -1,0 +1,41 @@
+<section class="main-contact-form-section scrolltrigger-refresh-target" id="contact-us">
+    <h2 class="contact-form-title fade-in-rotate simple-fade-up">
+      <perch:content id="contactFormHeading" type="text" label="Contact Form Heading"  required>
+    </h2>
+      <perch:form class="main-contact-form simple-fade-right" id="contact" method="post" app="perch_forms">
+          <div class="main-contact-form-input-wrapper">
+              <perch:label class="main-contact-form-label" for="name">Name<span class="required-marker" title="Required">&nbsp;*</span></perch:label>
+              <perch:input class="main-contact-form-input name-input" type="text" id="name" label="Name" required>
+          </div>
+          <div class="main-contact-form-input-wrapper">
+              <perch:label class="main-contact-form-label" for="email">Email<span class="required-marker" title="Required">&nbsp;*</span></perch:label>
+              <perch:input class="main-contact-form-input email-input"  type="email" id="email" label="Email Address" required>
+          </div>
+          <div class="main-contact-form-input-wrapper">
+              <perch:label class="main-contact-form-label" for="phone">Phone<span class="required-marker" title="Required">&nbsp;*</span></perch:label>
+              <perch:input class="main-contact-form-input phone-input"  type="tel" id="phone" label="Phone Number" required>
+          </div>
+          <div class="main-contact-form-input-wrapper">
+              <perch:label class="main-contact-form-label" for="postcode">Postcode<span class="required-marker" title="Required">&nbsp;*</span></perch:label>
+              <perch:input class="main-contact-form-input postcode-input"  type="text" id="postcode" label="Postcode" required>
+          </div>
+          <div class="form-identification-number">
+              <perch:label for="messageAreaOne">Message: Leave this field blank if you are a human</perch:label>
+              <perch:input type="textarea" id="messageAreaOne" aria-hidden="true" autocomplete="off" antispam="honeypot" />
+          </div>
+          <div class="main-contact-form-input-wrapper text-area-input-wrapper">
+              <perch:label class="main-contact-form-label text-area-label" for="message">Message<span class="required-marker" title="Required">&nbsp;*</span></perch:label>
+              <perch:input class="main-contact-form-input text-area-input" type="textarea" rows="3" id="message" label="Message" required>
+          </div>
+
+          <div class="submit-wrapper">
+              <perch:input class="submit" type="submit" id="submit" value="Send">
+          </div>
+
+          <perch:success>
+              <div class="success">
+                  <perch:content id="success" type="textarea" label="Thank you message" size="s" />
+              </div>
+          </perch:success>
+      </perch:form>
+</section>

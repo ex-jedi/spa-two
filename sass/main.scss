@@ -1,0 +1,693 @@
+// *=======================================================================================
+// ** Styles for all pages  **
+// *=======================================================================================
+
+// *=======================================================================================
+// ** Imports & Mixins  **
+// *=======================================================================================
+
+//*=========================================
+//** Imports **
+//*=========================================
+
+@use 'bits' as *; //Contains variables, media queries mixins etc.
+
+//*=========================================
+//** Mixins **
+//*=========================================
+
+// Bottom spacing
+@mixin bottom-spacing {
+  margin-bottom: $section-spacing-large;
+
+  @include breakpoint(1300) {
+    margin-bottom: $section-spacing-medium;
+  }
+
+  @include breakpoint(700) {
+    margin-bottom: $section-spacing-small;
+  }
+}
+
+// *=========================================
+// ** Page & Site Wrappers **
+// *=========================================
+
+html {
+  font-size: 10px;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+
+  // Scroll bar
+  @include styled-scrollbar(
+    $font-size-extra-small,
+    $background-colour-three,
+    $background-colour-light,
+    $background-colour-light
+  );
+}
+
+// * Box sizing rules
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0 auto;
+  position: relative;
+  min-width: 320px;
+  max-width: 2500px;
+  overflow-x: hidden;
+  @include main-font-stack;
+  background-color: $background-colour-light;
+}
+
+// *=========================================
+// ** Content container and block **
+// *=========================================
+
+//********** Headings**********
+h1,
+h2,
+h3 {
+  @include heading-font-stack;
+  font-weight: 700;
+  text-align: center;
+}
+
+h1,
+h2 {
+  font-size: $font-size-extra-large;
+  margin: 0 auto $section-spacing-large;
+
+  @include breakpoint(1100) {
+    margin: 0 auto $section-spacing-medium;
+  }
+
+  @include breakpoint(750) {
+    margin: 0 auto $section-spacing-small;
+    font-size: $font-size-large;
+  }
+}
+
+//********** Containers **********
+
+section,
+main {
+  top: 0;
+  left: 0;
+  position: relative;
+  overflow: hidden;
+  z-index: 3;
+  width: 100%;
+}
+
+section {
+  padding-block: $section-spacing-large;
+  // Push sections over due to menu trigger bar
+  margin-left: 100px;
+
+  @include breakpoint(1100) {
+    padding-block: $section-spacing-medium;
+    margin-left: 0;
+  }
+
+  @include breakpoint(750) {
+    padding-block: $section-spacing-small;
+    margin-left: 0;
+  }
+}
+
+//********** Paragraphs **********
+
+p {
+  margin-inline: auto;
+  margin-top: 0;
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+}
+
+.main-body-font {
+  font-size: $font-size-medium;
+  font-weight: 400;
+
+  @include breakpoint(750) {
+    font-size: $font-size-small;
+  }
+}
+
+// *=========================================
+// ** Inline **
+// *=========================================
+
+//********** Images **********
+
+//* Make images easier to work with
+img {
+  max-width: 100%;
+  display: block;
+}
+
+//********** Links **********
+
+// Better to leave underlining on by default and switch it off where you don't want it
+
+a {
+  text-decoration: underline;
+  color: $link-colour;
+}
+
+//*=========================================
+//** Header **
+//*=========================================
+
+.main-header {
+  margin-top: 10px;
+  background-color: $background-colour-one;
+  // padding-bottom: 200px;
+}
+
+//********** Main Logo **********
+.main-logo-wrapper {
+  @include flex(column);
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  margin: 0 auto 0 100px;
+  width: calc(100% - 100px);
+
+  @include breakpoint(1100) {
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+
+.main-logo {
+  width: 155px;
+  border-bottom: 10px solid $background-colour-two;
+  padding-bottom: 10px;
+}
+
+// *=========================================
+// ** Main Nav  **
+// *=========================================
+
+.main-nav-trigger-wrapper {
+  @include flex(row);
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: $background-colour-two;
+  height: 100vh;
+  width: 100px;
+  z-index: 4;
+  border-right: 3px solid $font-colour-light;
+
+  @include breakpoint(1100) {
+    justify-content: center;
+    align-items: center;
+    top: unset;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: auto;
+    width: 100%;
+    border-right: 0;
+    border-top: 3px solid $font-colour-light;
+  }
+}
+
+.main-nav-trigger {
+  border: none;
+  appearance: none;
+  background-color: transparent;
+  cursor: pointer;
+  padding: 25px;
+  width: fit-content;
+  height: fit-content;
+
+  @include breakpoint(1100) {
+    padding: $paragraph-spacing-small;
+  }
+}
+
+.main-nav-closer {
+  position: absolute;
+  top: 10rem;
+  right: 10rem;
+  background-color: transparent;
+  border: 0;
+  height: 75px;
+  width: 75px;
+  cursor: pointer;
+
+  @include breakpoint(1100) {
+    top: unset;
+    bottom: 100px;
+    right: 50%;
+    transform: translateX(50%) !important;
+  }
+
+  @include breakpoint(750) {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+.sideways-text {
+  transform: rotate(180deg);
+  writing-mode: vertical-rl;
+  text-orientation: sideways;
+  font-size: $font-size-medium;
+  color: $font-colour-dark;
+  font-weight: 700;
+
+  @include breakpoint(1100) {
+    writing-mode: horizontal-tb;
+    text-orientation: upright;
+    transform: rotate(0deg);
+    left: 0;
+  }
+
+  @include breakpoint(750) {
+    font-size: $font-size-small;
+  }
+}
+
+.main-nav {
+  @include flex(column);
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background-color: $background-colour-two;
+  position: fixed;
+  inset: 0;
+  transform: translateX(-100%);
+  z-index: 5;
+}
+
+.main-nav-link {
+  font-size: $font-size-large;
+  text-decoration: none;
+  transform: translateY(100px);
+  color: $font-colour-dark;
+  opacity: 0;
+
+  &:not(:last-of-type) {
+    margin-bottom: $paragraph-spacing-medium;
+  }
+
+  @include breakpoint(1100) {
+    font-size: $font-size-medium;
+  }
+}
+
+#main-nav-current {
+  text-decoration: underline;
+  cursor: not-allowed;
+}
+
+//********** Responsive Styles **********
+
+// *=========================================
+// ** Body **
+// *=========================================
+
+// *=========================================
+// ** Forms  **
+// *=========================================
+
+.main-contact-form-section {
+  padding-inline: $section-spacing-super-large;
+  background-color: $background-colour-two;
+  color: $font-colour-dark;
+  width: calc(100% - 100px);
+
+  @include breakpoint(1600) {
+    padding-inline: $section-spacing-extra-large;
+  }
+
+  @include breakpoint(1300) {
+    padding-inline: $section-spacing-large;
+  }
+
+  @include breakpoint(1100) {
+    padding-inline: $section-spacing-medium;
+    width: 100%;
+  }
+
+  @include breakpoint(1100) {
+    padding-inline: $section-spacing-small;
+  }
+
+  @include breakpoint(750) {
+    padding-inline: $section-spacing-super-tiny;
+  }
+}
+
+.main-contact-form {
+  @include flex(column);
+  width: 100%;
+  @include heading-font-stack;
+}
+
+//* Inherit fonts for inputs and buttons
+input,
+button,
+textarea {
+  font: inherit;
+  color: inherit;
+}
+
+.main-contact-form-input-wrapper {
+  @include flex(row);
+  justify-content: flex-start;
+  align-items: flex-end;
+  margin-bottom: $section-spacing-small;
+
+  @include breakpoint(1100) {
+    @include flex(column);
+    align-items: flex-start;
+    margin-bottom: $section-spacing-smaller;
+  }
+
+  @include breakpoint(750) {
+    margin-bottom: $section-spacing-tiny;
+  }
+}
+
+label {
+  font-size: $font-size-medium;
+  font-weight: 700;
+  margin-right: 10px;
+
+  @include breakpoint(750) {
+    font-size: $font-size-small;
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+}
+
+input {
+  flex: 1 1 auto;
+  background-color: $background-colour-two;
+  border-top: 0;
+  border-right: 0;
+  border-left: 0;
+  border-bottom: 3px solid $font-colour-dark;
+  font-size: $font-size-medium;
+  width: 100%;
+  border-radius: 0;
+
+  @include breakpoint(750) {
+    font-size: $font-size-small;
+  }
+}
+
+.text-area-input-wrapper {
+  align-items: flex-start;
+}
+
+.text-area-input {
+  margin-top: -5px;
+  color: $font-colour-dark;
+  width: 100%;
+  background-color: $background-colour-two;
+  border: 0;
+  font-size: $font-size-medium;
+  resize: none;
+
+  // Underline
+  background-attachment: local;
+  line-height: $font-size-large;
+  background-image: linear-gradient(
+    transparent,
+    transparent calc(#{$font-size-large} - 3px),
+    $font-colour-dark calc(#{$font-size-large} - 3px)
+  );
+  background-size: $font-size-large $font-size-large;
+
+  // Scroll bar
+  @include styled-scrollbar(
+    $font-size-extra-small,
+    $background-colour-dark,
+    $background-colour-two,
+    $background-colour-two
+  );
+
+  @include breakpoint(750) {
+    font-size: $font-size-small;
+  }
+}
+
+.submit-wrapper {
+  @include flex(column);
+  align-items: center;
+  justify-content: center;
+}
+
+.submit {
+  border: 3px solid $font-colour-dark;
+  background-color: $background-colour-two;
+  margin: 0 auto;
+  width: fit-content;
+  padding: 0 $font-size-extra-small;
+  text-transform: uppercase;
+  font-weight: 700;
+  appearance: none;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background-color: $background-colour-three;
+    color: $font-colour-light;
+  }
+}
+
+//********** Success **********
+.success {
+  @include flex(column);
+  justify-content: center;
+  align-items: center;
+  font-size: $font-size-large;
+  text-align: center;
+
+  @include breakpoint(750) {
+    font-size: $font-size-medium;
+  }
+}
+
+//********** Honeypot **********
+
+.form-identification-number {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: auto;
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  white-space: nowrap;
+}
+
+// *=========================================
+// ** Footer  **
+// *=========================================
+
+.main-footer {
+  background-color: $background-colour-dark;
+  color: $font-colour-light;
+  font-size: $font-size-small;
+  font-weight: 400;
+  padding: $section-spacing-large $section-spacing-super-large;
+
+  margin: 0 0 0 100px;
+
+  a {
+    color: inherit;
+  }
+
+  p {
+    margin-bottom: $paragraph-spacing-small;
+    text-align: center;
+  }
+
+  div {
+    @include flex(column);
+    align-items: center;
+    &:not(:last-of-type) {
+      margin-bottom: $section-spacing-small;
+    }
+  }
+
+  @include breakpoint(1300) {
+    padding: $section-spacing-large $section-spacing-extra-large;
+  }
+
+  @include breakpoint(1100) {
+    padding: $section-spacing-medium;
+    margin: 0;
+
+    div {
+      &:not(:last-of-type) {
+        margin-bottom: $section-spacing-smaller;
+      }
+    }
+  }
+
+  @include breakpoint(900) {
+    padding: $section-spacing-medium $section-spacing-small;
+    margin: 0;
+  }
+
+  @include breakpoint(900) {
+    padding: $section-spacing-small $section-spacing-super-tiny;
+    margin: 0;
+  }
+
+  @include breakpoint(750) {
+    div {
+      &:not(:last-of-type) {
+        margin-bottom: $section-spacing-tiny;
+      }
+    }
+  }
+}
+
+//*=========================================
+//** Cookie Warning **
+//*=========================================
+
+.cookie-warning-wrapper {
+  @include flex(row);
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 1rem;
+  font-size: 30px;
+  background-color: $background-colour-three;
+  opacity: 0;
+  z-index: 10;
+  transition: all 0.5s 0.25s;
+  font-weight: 400;
+  border: 3px solid $background-colour-light;
+
+  @include breakpoint(1100) {
+    font-size: 20px;
+  }
+
+  @include breakpoint(850) {
+    @include flex(column);
+    padding: $paragraph-spacing-medium;
+  }
+}
+
+p.cookie-warning-paragraph {
+  margin: 0 $section-spacing-large 0 0;
+  color: $font-colour-light;
+
+  @include breakpoint(1300) {
+    margin: 0 $paragraph-spacing-large 0 0;
+  }
+
+  @include breakpoint(850) {
+    text-align: center;
+    margin: 0 1rem;
+  }
+}
+
+.cookie-warning-link {
+  color: inherit;
+  text-decoration: underline;
+}
+
+.cookie-warning-button {
+  background-color: transparent;
+  border: 3px solid $font-colour-light;
+  color: $font-colour-light;
+  @include heading-font-stack;
+  font-size: inherit;
+  font-weight: 700;
+  padding: $paragraph-spacing-small $paragraph-spacing-medium;
+  width: fit-content;
+  flex: 0 0 auto;
+  text-align: center;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background-color: $background-colour-two;
+    color: $font-colour-dark;
+  }
+
+  @include breakpoint(850) {
+    margin: $paragraph-spacing-medium auto 0;
+    padding: $paragraph-spacing-small $paragraph-spacing-large;
+  }
+}
+
+.cookie-warning-wrapper.show-cookie-warning {
+  opacity: 1;
+}
+
+//*=========================================
+//** animations **
+//*=========================================
+
+.simple-fade-up {
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+.simple-fade-right {
+  opacity: 0;
+  transform: translateX(-40px);
+}
+
+//*=========================================
+//** Utility & Accessibility  **
+//*=========================================
+
+//* Remove all animations and transitions for people that prefer not to see them
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+//*Skip to content link
+.show-on-focus {
+  position: absolute;
+  color: $font-colour-dark;
+  background-color: $background-colour-one;
+  padding: 10px;
+  font-size: $font-size-medium;
+  font-weight: 400;
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 1px;
+  margin: 0.5rem 0 0 0.5rem;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  text-decoration: none;
+
+  &:focus {
+    z-index: 20;
+    width: auto;
+    height: auto;
+    clip: auto;
+  }
+}

@@ -1,0 +1,132 @@
+/* Redefine/override any CSS variables here */
+body {
+  /* GROUP VARIABLES -- DECORATION -- COLOURS -- THEME
+    =================================================== */
+  --colour-main: hsl(222, 47%, 35%);
+  --colour-main-hover: hsl(151, 31%, 44%);
+  --admin-colour-one: hsl(0, 0%, 75%);
+  --admin-colour-two: rgb(253, 253, 253);
+  --admin-color-dark: hsl(222, 47%, 35%);
+  --font-color-light: hsl(153, 36%, 95%);
+  --font-color-dark: hsl(0, 0%, 20%);
+
+  /* GROUP VARIABLES -- DECORATION -- TEXT
+    =================================================== */
+  --font-family-main: futura-pt, sans-serif;
+  --font-family-headline: roboto, sans-serif;
+  /* GROUP VARIABLES -- DECORATION -- TEXT -- WEIGHTS
+    =================================================== */
+  --font-family-main-weight-normal: 400;
+  --font-family-headline-strong: 700;
+}
+
+/* Add any brand specific CSS here */
+
+html {
+  font-size: 25px;
+}
+
+body {
+  font-family: var(--font-family-main);
+}
+
+h1,
+h2,
+h3,
+label,
+header a,
+.smartbar li a {
+  font-family: var(--font-family-headline) !important;
+  font-weight: var(--font-family-headline-strong) !important;
+}
+
+/* Main Nav  */
+.utilnav a span {
+  opacity: 1;
+}
+
+/* Sidebar style  */
+.sidebar,
+.sidebar .badge {
+  background-color: var(--admin-color-dark);
+}
+
+.sidebar .back {
+  border: 1px solid var(--admin-colour-two);
+  font-size: 17px;
+  transition: background-color 0.2s ease;
+}
+
+.sidebar .back:hover {
+  border: 1px solid var(--admin-colour-two) !important;
+}
+
+.subnav li a {
+  border-left: 4px solid var(--admin-color-dark);
+}
+
+.sidebar a,
+.sidebar h2,
+.sidebar h3 {
+  color: var(--font-color-light) !important;
+  opacity: 1;
+}
+
+/* Makes text in text fields a bit larger & non bold */
+div.form-entry,
+input.input-simple,
+textarea.input-simple {
+  font-size: 0.9rem !important;
+  font-weight: var(--font-family-main-weight-normal) !important;
+}
+
+/* Non-bolds inline help */
+.inline-help {
+  font-weight: var(--font-family-main-weight-normal) !important;
+}
+
+/* Text is black on black background when redactor source is open. This fixes it */
+textarea.redactor-source-open {
+  color: #fff !important;
+}
+
+/* Adds space above block item title bar */
+.block-item {
+  padding-top: var(--rhythm-s);
+}
+
+/*Adds border to block item title bar  */
+.block-item .divider {
+  border: 1px solid var(--admin-colour-one);
+}
+
+/* Adjusting smartbar and divider icon position for larger fonts */
+.smartbar a svg,
+.smartbar button svg {
+  margin-top: 5px;
+}
+
+/* Hides markitup header so users don't format embedded code. */
+div.markItUpHeader {
+  display: none;
+  visibility: hidden;
+}
+
+/* Hiding tags from Post meta admin  */
+input#postTags,
+input#postTags,
+label[for='postTags'] ~ span.inline-help,
+label[for='postTags'] {
+  display: none;
+}
+
+/* Hiding allow Comments checkbox and title from Post meta admin  */
+label[for='postAllowComments'],
+label[for='postAllowComments'] ~ .form-entry {
+  display: none;
+}
+
+/* Hiding help button */
+.utilnav a[href='/perch/core/help/'] {
+  display: none;
+}

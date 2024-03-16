@@ -1,0 +1,178 @@
+// *=======================================================================================
+// ** General Pages Styles  **
+// *=======================================================================================
+
+//*=========================================
+//** Imports **
+//*=========================================
+
+@use 'bits' as *; //Contains variables, media queries mixins etc.
+
+//*=========================================
+//** Header **
+//*=========================================
+
+.header-content-wrapper {
+  padding: $section-spacing-large $section-spacing-super-large 0;
+  color: $font-colour-dark;
+  margin-left: 100px;
+  width: calc(100% - 100px);
+
+  @include breakpoint(1600) {
+    padding: $section-spacing-large $section-spacing-extra-large 0;
+  }
+
+  @include breakpoint(1300) {
+    padding: $section-spacing-large $section-spacing-large 0;
+  }
+
+  @include breakpoint(1100) {
+    padding: $section-spacing-medium $section-spacing-medium 0;
+    margin: 0;
+    width: 100%;
+  }
+
+  @include breakpoint(900) {
+    padding: $section-spacing-medium $section-spacing-small 0;
+    margin: 0;
+  }
+
+  @include breakpoint(750) {
+    padding: $section-spacing-small $section-spacing-super-tiny 0;
+    margin: 0;
+  }
+}
+
+.pages-header-main-heading {
+  margin-bottom: 0;
+}
+
+.pages-header-subtitle {
+  font-size: $font-size-medium;
+  margin: $section-spacing-large 0 0;
+
+  @include breakpoint(1100) {
+    margin: $section-spacing-medium 0 0;
+  }
+
+  @include breakpoint(1100) {
+    margin: $section-spacing-medium 0 0;
+  }
+
+  @include breakpoint(750) {
+    margin: $section-spacing-small 0 0;
+  }
+}
+
+//*=========================================
+//** Page  **
+//*=========================================
+
+.pages-content-wrapper {
+  padding: $section-spacing-large $section-spacing-super-large
+    calc(#{$section-spacing-large} + 50px);
+  background-color: $background-colour-one;
+  margin-left: 100px;
+  width: calc(100% - 100px);
+
+  @include breakpoint(1600) {
+    padding: $section-spacing-large $section-spacing-extra-large
+      calc(#{$section-spacing-large} + 50px);
+  }
+
+  @include breakpoint(1300) {
+    padding: $section-spacing-large;
+  }
+
+  @include breakpoint(1100) {
+    padding: $section-spacing-medium $section-spacing-small
+      calc(#{$section-spacing-medium} + 50px);
+    margin-left: 0;
+    width: 100%;
+  }
+
+  @include breakpoint(750) {
+    padding: $section-spacing-small $section-spacing-super-tiny
+      calc(#{$section-spacing-small} + 25px);
+  }
+}
+
+.pages-block-wrapper {
+  padding-bottom: calc(#{$section-spacing-large} + 50px);
+  color: $font-colour-dark;
+
+  &:nth-child(odd) {
+    img {
+      box-shadow: 50px 50px $background-colour-two;
+    }
+  }
+
+  &:nth-child(even) {
+    img {
+      box-shadow: 50px 50px $background-colour-three;
+    }
+  }
+
+  &:last-of-type {
+    padding-bottom: 0;
+  }
+
+  @include breakpoint(1100) {
+    padding-bottom: calc(#{$section-spacing-medium} + 50px);
+  }
+
+  @include breakpoint(750) {
+    padding-bottom: calc(#{$section-spacing-small} + 25px);
+
+    &:nth-child(odd) {
+      img {
+        box-shadow: 25px 25px $background-colour-two;
+      }
+    }
+
+    &:nth-child(even) {
+      img {
+        box-shadow: 25px 25px $background-colour-three;
+      }
+    }
+  }
+}
+
+.pages-subtitle,
+h3 {
+  text-align: left;
+  margin-bottom: $section-spacing-small;
+
+  @include breakpoint(1100) {
+    margin-bottom: $section-spacing-smaller;
+  }
+
+  @include breakpoint(750) {
+    margin-bottom: $section-spacing-tiny;
+  }
+}
+
+.block-textwrapper {
+  margin-bottom: $section-spacing-small;
+
+  a {
+    text-decoration: underline;
+    color: inherit;
+  }
+
+  @include breakpoint(1100) {
+    margin-bottom: $section-spacing-smaller;
+  }
+
+  @include breakpoint(750) {
+    margin-bottom: $section-spacing-tiny;
+  }
+}
+
+.pages-block-image {
+  width: auto;
+  max-height: 98vh;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  margin: 0 auto;
+}

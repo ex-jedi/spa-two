@@ -1,0 +1,15 @@
+<section class="homepage-gallery-section">
+  <div class="homepage-gallery">
+    <perch:repeater id="homepageGalleryImages" label="Gallery Images (10 max)" max="10">
+      <div class="homepage-gallery-image-wrapper">
+        <img class="homepage-gallery-image" itemprop="image" src="<perch:content id="homepageGalleryImage" type="image" width="1800" height="1800" label="Homepage Gallery Image" help="Image must be at least 1800px wide" crop>" alt="<perch:content id="altOne" type="text" label="Image Description" help="Short description of image for SEO and screen readers">"
+        sizes="(max-width: 1300px) 100vw, 50vw"
+        srcset="<perch:content type="image" id="homepageGalleryImage" width="1800" height="1800" crop> 1800w,
+        <perch:content type="image" id="homepageGalleryImage" width="1400" height="1400" crop> 1400w,
+        <perch:content type="image" id="homepageGalleryImage" width="1000" height="1000" crop> 1000w,
+        <perch:content type="image" id="homepageGalleryImage" width="600" height="600" crop> 600w,
+        <perch:content type="image" id="homepageGalleryImage" width="300" height="300" crop> 300w">
+      </div>
+    </perch:repeater>
+  </div>
+</section>

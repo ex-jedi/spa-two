@@ -1,0 +1,933 @@
+/* GROUP ATOMS / ELEMENTS
+=================================================== */
+body,
+body .redactor-styles {
+    font-family: var(--font-family-main);
+}
+/* GROUP ATOMS / ELEMENTS / HEADINGS
+=================================================== */
+.title-panel h1 {
+    font-family: var(--font-family-main);
+    font-weight: var(--font-family-main-weight-strong);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 1.2em;
+}
+
+
+
+
+/* GROUP ATOMS / LINKS
+=================================================== */
+a {
+    color: var(--colour-main);
+}
+
+a.primary:link,
+a.primary:visited,
+.primary {
+    border-color: #ddd;
+}
+
+.main-panel .primary img {
+    /* Clean up image descended from a link in the main panel, so that it covers the bottom border */
+    position: relative;
+    top: 7px;
+}
+
+
+
+
+/* GROUP ATOMS / SKIP LINKS
+=================================================== */
+/* html qualifier to override default :focus styles in custom-admin.css */
+html /* a*/.c-skip-to-content {
+    /* Screen Reader Text */
+    clip: rect(1px, 1px, 1px, 1px);
+
+    position: absolute!important;
+    overflow: hidden;
+    width: 1px;
+    height: 1px;
+    /* -- */
+    outline: none;
+    /* Looks better on Skip to Content */
+    text-underline-position: auto;
+    padding: var(--rhythm-s-1) var(--rhythm-m);
+}
+
+/* html qualifier to override default :focus styles in custom-admin.css */
+html /* a*/.c-skip-to-content:focus {
+    /* Screen Reader Focus State */
+    clip: auto!important;
+
+    z-index: 100000; /* Above any toolbars. */
+    display: block;
+    top: 0;
+    left: 0;
+    width: auto;
+    height: auto;
+    /* Stick decoration qualities on :focus to override default styling selectors in custom-admin.css */
+    background: black;
+    color: white;
+    border: 3px solid var(--colour-focus);
+    font-size: var(--font-size-s-0);
+}
+
+
+
+
+/* GROUP ATOMS / BUTTONS
+=================================================== */
+/* e.g. Collections > Add another item */
+.button.button-icon {
+    /* Increase */
+    padding: var(--rhythm-s);
+}
+
+/* e.g. Collections > Pagination */
+.button.button-simple {
+    /* Increase */
+    padding: 12px 1.6em;
+}
+
+/* e.g. Delete button */
+.button.button-small {
+    padding: 0.4rem 0.6rem;
+    line-height: 1!important;
+}
+
+.back,
+.pagination-number.pagination-current,
+/* Global search */
+.button.action-info,
+.button.button-icon.action-info,
+.button.button-small.action-info {
+    background: var(--colour-main);
+}
+
+/* "back" button in top left e.g. "< Pages" */
+.back {
+    padding: 13px 25px;
+    /* To appear more centered */
+    padding-right: 35px;
+    border-radius: 3px;
+}
+
+.sidebar-back .back {
+    display: inline-block;
+    /* Ellipsis */
+    /* =JFG. Need to be inline-block or block to enable ellipsis */
+    white-space: nowrap;
+    /* 'overflow' value must be different from 'visible' */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: var(--font-family-main-weight-strong);
+    font-size: 0.8em;
+    /* Optional */
+     max-width: 100%; 
+    /* -- */
+    color: white;
+}
+
+/* Icon inside the "back" button in top left */
+.sidebar-back .icon {
+    margin-right: var(--rhythm-s-0);
+    fill: white;
+    /* Decrease */
+    width: 10px;
+    height: 10px;
+}
+
+.sidebar-back a:hover,
+.sidebar-back a:focus {
+    border-bottom: 0;
+}
+
+header .sidebar-back a:hover,
+header .sidebar-back a:focus {
+    background: none;
+}
+
+/* e.g. Add another item */
+.button.to-the-top:hover,
+.title-panel .button:hover,
+.title-panel .button-icon:hover,
+.title-panel .button-icon.active,
+.sidebar-back a:hover,
+.sidebar-back a:focus,
+/* e.g. Global search */
+.button.action-info:hover,
+.button.action-info.active,
+.button.button-icon.action-info:hover,
+.button.button-icon.action-info.active,
+.button.button-small.action-info:hover,
+.button.button-small.action-info.active {
+    background: var(--colour-main-hover);
+    /* e.g. My Site */
+    border-color: transparent;
+}
+
+/* Success Buttons */
+.button.action-success:hover, .button.action-success.active,
+.button.button-icon.action-success:hover,
+.button.button-icon.action-success.active,
+.button.button-small.action-success:hover,
+.button.button-small.action-success.active {
+    background-color: var(--colour-select);
+    color: white;
+}
+/* GROUP ATOMS / ASSET MANAGEMENT
+=================================================== */
+/* e.g. hovering over an image, the little 'x' prompting you to remove it */
+.asset-badge:hover .asset-badge-remove-action {
+    color: var(--colour-fail);
+}
+
+/* Select button e.g. 'Use selected' in asset panel */
+.asset-selected .asset-meta {
+    background: rgba(var(--colour-select-rgb),0.6);
+}
+
+
+
+
+/* GROUP MOLECULES / BARS
+=================================================== */
+.topbar.runway.user_theme_dark,
+.topbar.user_theme_dark,
+.topbar.runway.user_theme_light,
+.topbar.user_theme_light,
+.sidebar {
+    background-repeat: no-repeat;
+}
+/* GROUP MOLECULES / BARS / TOP
+=================================================== */
+.utilnav a,
+.utilnav li .logout,
+.utilnav .logout,
+.utilnav a.logout:focus {
+    padding-bottom: var(--rhythm-l);
+    padding-top: var(--rhythm-l);
+    border-radius: 0;
+}
+/* GROUP MOLECULES / BARS / TOP / RHYTHM
+=================================================== */
+.topbar.user_theme_dark a span {
+  /* So that bar doesn't shift once there is focus on something like 'settings' */
+    border-bottom: 2px solid transparent;
+}
+
+.utilnav .logout {
+    border: 2px solid transparent;
+}
+
+.utilnav a:focus {
+    padding-bottom: var(--rhythm-m);
+}
+
+.utilnav {
+    padding-right: 0;
+}
+
+/* Custom */
+@media (min-width: 375px) {
+    .utilnav .logout,
+    .utilnav a.logout:focus {
+        padding-right: var(--rhythm-s-1);
+        padding-left: var(--rhythm-s-1);
+    }
+}
+
+/* Custom */
+@media (min-width: 950px) {
+    .utilnav a {
+        padding-right: var(--rhythm-s);
+        padding-left: var(--rhythm-s);
+    }
+}
+/* GROUP MOLECULES / BARS / TOP / DECORATION
+=================================================== */
+.utilnav {
+    font-weight: var(--font-family-main-weight-strong);
+}
+
+.utilnav a span {
+    opacity: 0.6;
+}
+
+.utilnav .logout {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    background: rgba(0, 0, 0, 0.04);
+    color: rgba(0,0,0,0.4);
+}
+
+/* --mq-after-mobile-layout */
+@media (min-width: 550px) {
+    .topbar.runway.user_theme_dark.nobrand,
+    .topbar.runway.user_theme_light.nobrand,
+    .topbar.user_theme_dark.nobrand,
+    .topbar.user_theme_light.nobrand {
+        background-image: url(../../plugins/ui/logo-dark.svg);
+        background-size: 50px;
+        background-position: center center;
+    }
+
+    .topbar.runway.user_theme_light.nobrand,
+    .topbar.user_theme_light.nobrand {
+        background-image: url(../../plugins/ui/logo.svg);
+    }
+}
+
+
+
+
+/* GROUP MOLECULES / BARS / SIDEBAR
+=================================================== */
+/* GROUP MOLECULES / BARS / SIDEBAR / RHYTHM
+=================================================== */
+.sidebar {
+    padding-top: var(--rhythm-s-1);
+}
+
+.sidebar h2,
+.sidebar h3 {
+    /* Decrease */
+    margin-bottom: var(--rhythm-s-1);
+}
+
+.submenu-container > *,
+/* Sidebar (level up from current menu) e.g. click 'My Site' */
+.appmenu-container .appmenu {
+    margin-bottom: 4rem;
+}
+
+.show-sidebar .sidebar {
+    /* Increase */
+    padding-top: 3.5em;
+}
+
+.sidebar-back {
+    /* Increase */
+    margin-bottom: var(--rhythm-l);
+}
+
+.sidebar li a,
+.sidebar li span {
+    /* Increase */
+    padding-bottom: var(--rhythm-s);
+    padding-top: var(--rhythm-s);
+}
+/* GROUP MOLECULES / BARS / SIDEBAR / DECORATION
+=================================================== */
+.sidebar-back,
+.sidebar-back a,
+.sidebar h2,
+.sidebar h3 {
+    color: black;
+}
+
+.sidebar h2,
+.sidebar h3 {
+    font-size: 0.8em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: var(--font-family-main-weight-strong);
+    opacity: 0.5;
+}
+
+.sidebar-back {
+    /* Decrease */
+    font-size: 1.05em;
+}
+
+.sidebar .badge {
+    /* e.g. Blog Comments number */
+    background: var(--colour-perch-button-secondary);
+    color: var(--colour-main);
+}
+
+.sidebar h3 {
+    font-weight: var(--font-family-main-weight-strong);
+}
+
+.sidebar {
+    background-color: white;
+}
+
+.sidebar li {
+    border: none;
+}
+
+.sidebar .subnav li:not(:first-child) {
+    /* De-emphasise subnav items e.g. below 'Pages' so it's more obvious that they are children.
+    This should affect nav items like Collections, Master Pages, etc. */
+    font-size: 0.9em;
+}
+
+.sidebar li a,
+.sidebar li span {
+    /* Lighter */
+    color: #666;
+    font-weight: var(--font-family-main-weight-normal);
+}
+
+/* Not sidebar, because .selected is not available in the ul.appmenu, making it confusing when you a 'selected' state in some menus, and others not */
+/* .sidebar li a, */
+.subnav li a {
+    border-left: 4px solid #fafafa;
+}
+
+.sidebar .selected {
+    border-left: 4px solid var(--colour-main);
+    font-weight: var(--font-family-main-weight-strong);
+}
+
+/* .selected is not available in the ul.appmenu, so a sidebar decoration should not suggest so. */
+.appmenu li a {
+    padding-left: 0;
+    font-size: 0.9em;
+}
+/* GROUP MOLECULES / BARS / SIDEBAR / MOBILE
+=================================================== */
+/* --mq-before-mobile-layout */
+@media (max-width: 549px) {
+    .sidebar {
+        background-image: url(../../plugins/ui/logo.svg);
+        background-size: 50px 75px;
+        background-position: bottom right 15px;
+    }
+}
+
+
+
+
+/* GROUP MOLECULES / NOTIFICATIONS
+=================================================== */
+.notification {
+    padding-bottom: var(--rhythm-s-1);
+    padding-top: var(--rhythm-s-1);
+    margin-right: var(--rhythm-perch-main-gutters);
+    margin-left: var(--rhythm-perch-main-gutters);
+    border-radius: 2px;
+}
+
+.notification.notification-success,
+.notification.notification-success a.notification-link {
+    background: var(--colour-success);
+    color: white;
+    text-shadow: 1px 1px 1px rgba(26,26,26,0.25);
+}
+
+.notification.notification-success svg {
+    fill: white;
+}
+
+
+
+
+/* GROUP MOLECULES / DIALOGUE
+=================================================== */
+.dialog-content.role-confirm {
+    /* Increase */
+    width: 500px;
+}
+
+.dialog h1 {
+    font-weight: var(--font-family-main-weight-strong);
+}
+
+.confirm-dialog-buttons {
+    /* Increase */
+    padding-bottom: 22px;
+    padding-top: 22px;
+}
+/* GROUP MOLECULES / DIALOGUE / DECORATION
+=================================================== */
+.dialog-content {
+    box-shadow: 0 0 40px rgba(0,0,0,0.1);
+    border-radius: 5px;
+}
+
+
+
+
+/* GROUP MOLECULES / SEARCH
+=================================================== */
+/* e.g. Global search */
+.role-search .button {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.dialog .form-simple input[type=search] {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.dialog .form-simple input[type=search]:focus {
+    outline: none;
+    box-shadow: inset 0px 0px 5px rgba(0,0,0,0.1);
+}
+
+
+
+
+/* GROUP MOLECULES / SEARCH RESULTS / LAYOUT
+=================================================== */
+.search-results li {
+    position: relative;
+}
+
+/* ul*/.search-results .source {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+/* GROUP MOLECULES / SEARCH RESULTS
+=================================================== */
+/* ul*/.search-results li {
+    padding: var(--rhythm-s-2);
+    margin-bottom: var(--rhythm-l-2);
+    margin-top: var(--rhythm-l-2);
+    border-radius: 5px;
+    background-color: var(--colour-perch-background-grey-light);
+    border: 1px solid var(--colour-perch-border-grey);
+}
+
+/* ul*/.search-results h2 {
+    /* More prominent */
+    font-weight: 600;
+    font-size: 1.1em;
+}
+
+/* ul*/.search-results .source {
+    padding: var(--rhythm-s);
+    background: var(--colour-perch-border-grey);
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    font-weight: var(--font-family-main-weight-strong);
+    font-size: 0.9em;
+}
+
+
+
+
+/* GROUP ORGANISMS / SMART BAR & TABLES
+=================================================== */
+/* e.g. Pages > Collections */
+.smartbar {
+    /* Fix gap */
+    margin-bottom: 0;
+}
+
+/* Top Bar */
+.smartbar li a,
+.smartbar li button {
+    /* Increase */
+    padding-bottom: var(--rhythm-s);
+    padding-top: var(--rhythm-s);
+}
+
+/* Rows */
+table th,
+table td {
+    /* Increase */
+    padding-bottom: var(--rhythm-s-1);
+    padding-top: var(--rhythm-s-1);
+}
+
+/* e.g. blog 'post' heading (first column) */
+table th:first-child a {
+    margin-left: var(--rhythm-s-0);
+}
+
+/* Title column header of 'Pages' */
+.kindofabigdeal {
+    padding-left: var(--rhythm-s);
+}
+
+.smartbar li .breadcrumb.tab-active a:last-child {
+    /* Increase */
+    padding-bottom: var(--rhythm-s);
+    padding-top: var(--rhythm-s);
+}
+
+th,
+table th,
+.smartbar li .breadcrumb a:last-child {
+    /* Ensure the correct weight is being used */
+    font-weight: var(--font-family-main-weight-strong);
+}
+
+table th {
+    font-size: 1em;
+}
+
+a.primary:link,
+a.primary:visited,
+.primary {
+    color: #333;
+    font-size: 1.15em;
+    /* Increase */
+    margin-left: var(--rhythm-s-0);
+}
+
+td.region {
+    font-size: 0.85em;
+    opacity: 0.85;
+}
+
+table tr {
+    /* Add some borders */
+    border-left: 1px solid var(--colour-perch-border-grey);
+    border-right: 1px solid var(--colour-perch-border-grey);
+}
+
+table th,
+thead tr:hover,
+/* e.g. Regions > Main Heading */
+.divider,
+/* Organisms > Editor > Field Groups (Cross Pollinated) */
+.field-group-label {
+    background: var(--colour-gradient-white);
+}
+
+/* --mq-before-perch-desktop-layout */
+@media (max-width: 767px) {
+    table tr {
+        border-bottom: 1px solid var(--colour-perch-border-grey);
+        border-top: 1px solid var(--colour-perch-border-grey);
+        box-shadow: var(--box-shadow-b-light);
+        /* Increase */
+        margin-bottom: var(--rhythm-m);
+    }
+
+    table td {
+        /* Lighter */
+        border-bottom: 1px solid var(--colour-perch-border-grey);
+    }
+
+    table td:before {
+        font-weight: var(--font-family-main-weight-strong);
+        /* Improve readability */
+        text-transform: none;
+    }
+
+    table.nested-list tr {
+        box-shadow: none;
+    }
+}
+
+/* Custom */
+@media (max-width: 1099px) {
+    table.nested-list td {
+        /* Increase */
+        padding-bottom: var(--rhythm-s-1);
+        padding-top: var(--rhythm-s-1);
+    }
+}
+
+
+
+
+/* GROUP ORGANISMS / EDITOR
+=================================================== */
+.divider,
+/* Organisms > Editor > Field Groups (Cross Pollinated) */
+.field-group-label {
+    padding-bottom: var(--rhythm-s);
+    padding-top: var(--rhythm-s);
+    font-weight: var(--font-family-main-weight-strong);
+    border: 1px solid var(--colour-perch-border-grey);
+}
+
+.field-wrap + .divider,
+/* Organisms > Editor > Field Groups (Cross Pollinated) */
+.field-wrap + .field-group,
+.divider-collapse-zone + .divider {
+    /* e.g. Settings */
+    margin-top: var(--rhythm-l);
+}
+
+/* e.g. if first on the page */
+.edititem > .divider:first-child,
+/* e.g. Set Options */
+.form-simple > .divider:first-child {
+    border-top: 0;
+}
+
+/* Override e.g. if 'item 2' divider */
+.edititem + .edititem .divider {
+    border: 1px solid var(--colour-perch-border-grey);
+}
+
+.form-simple label,
+.form-simple .fieldset-inner .legend-wrap,
+.repeater-heading {
+    /* Ensure correct weight is used */
+    font-weight: var(--font-family-main-weight-strong);
+    /* Improve contrast */
+    color: black;
+    /* Increase */
+    font-size: 1.05em;
+}
+
+.checkbox-single label {
+    /* Ensure correct weight is used */
+    font-weight: var(--font-family-main-weight-normal);
+}
+
+.form-simple label {
+    /* Increase */
+    padding-bottom: var(--rhythm-s-0);
+}
+
+.input-simple,
+textarea.input-simple,
+/* e.g. selecting a category */
+.selectize-input {
+    /* Increase */
+    padding: var(--rhythm-s);
+}
+
+.form-entry {
+    margin-bottom: 0.2rem;
+}
+
+.field-annotations {
+    flex-direction: row;
+}
+
+.inline-help:last-child {
+    /* e.g. inline help below an image upload area
+    :last-child to avoid unintentionally adding margin when help instructions are above a textarea */
+    margin-bottom: var(--rhythm-s);
+}
+
+.inline-help + .form-entry {
+    padding-top: var(--rhythm-s);
+}
+/* GROUP ORGANISMS / EDITOR / UPLOADS { / IMAGE UPLOADS}
+=================================================== */
+.asset-badge {
+    /* Add */
+    padding-bottom: var(--rhythm-s-0-0);
+}
+
+.asset-badge .icon-upload {
+    /* Decrease */
+    width: 40px;
+}
+
+.asset-badge-thumb.thumbless {
+    border-width: 3px;
+    border-radius: 5px;
+}
+
+.asset-badge-meta {
+    padding: var(--rhythm-s-2);
+    padding-top: var(--rhythm-s);
+    border-radius: 5px;
+    margin-left: var(--rhythm-m);
+    background-color: var(--colour-perch-background-grey-light);
+    border: 1px solid var(--colour-perch-border-grey);
+}
+/* GROUP ORGANISMS / EDITOR / DELETE BUTTONS
+=================================================== */
+.button.action-alert,
+.button.button-small.action-alert {
+    background-color: var(--colour-fail);
+}
+
+.button.action-alert:hover,
+.button.button-small.action-alert:hover {
+    background-color: var(--colour-fail-hover);
+}
+/* GROUP ORGANISMS / EDITOR / TAB e.g. REGION OPTIONS
+=================================================== */
+.form-simple /* .field-wrap*/.checkbox-single {
+    padding-bottom: 0;
+}
+
+.form-simple .submit-bar /* .field-wrap*/.checkbox-single {
+    /* Override for Submit bar e.g. "Save as draft" checkbox */
+    padding-bottom: var(--rhythm-s-0);
+}
+
+/* .field-wrap + .field-wrap { */
+    /* Removed in case there are lots of checkbox fields in a row */
+    /* padding-top: var(--rhythm-s); */
+/* } */
+
+.field-wrap + .checkbox-single {
+    padding-top: var(--rhythm-s-0);
+}
+/* GROUP ORGANISMS / EDITOR / BLOCKS
+=================================================== */
+.block-item,
+/* Organisms > Editor > Field Groups (Cross Pollinated) */
+.field-group {
+    padding-bottom: var(--rhythm-s);
+    margin-bottom: var(--rhythm-l);
+    border: 1px solid var(--colour-grey);
+    box-shadow: var(--box-shadow-item);
+    border-radius: 5px;
+    margin-right: 24px;
+    margin-left: 24px;
+}
+
+.block-item .divider,
+/* Organisms > Editor > Field Groups (Cross Pollinated) */
+.field-group-label {
+    border-top: 0;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.block-add-bar {
+    padding-left: 0;
+    margin-bottom: var(--rhythm-m);
+}
+
+.block-add-bar a,
+.block-add-prompt .block-add {
+    font-size: 1.1em;
+    font-weight: var(--font-family-main-weight-strong);
+    background: none;
+}
+
+.block-add-bar .icon-add {
+    /* Ugly, let's replace with text "+" instead */
+    display: none;
+}
+
+.block-add-bar::before {
+    content: "+";
+    margin-right: var(--rhythm-s);
+    font-size: 1.5em;
+    opacity: 0.2;
+}
+/* GROUP ORGANISMS / EDITOR / REPEATERS
+=================================================== */
+.repeated-item {
+    margin-bottom: var(--rhythm-m);
+    box-shadow: var(--box-shadow-item-left);
+    border: 1px solid var(--colour-perch-border-grey);
+    border-left-color: var(--colour-grey);
+}
+
+.repeated-item:first-child {
+    border-top: 0;
+}
+
+.block-item .repeated-item {
+    /* Remove the box-shadow when inside a block, otherwise it's 'too much' */
+    box-shadow: none;
+}
+
+.repeated-fields {
+    /* Increase */
+    padding-top: var(--rhythm-s-0);
+}
+/* GROUP ORGANISMS / EDITOR / FIELD GROUPS (CROSS POLLINATED)
+=================================================== */
+.field-group {
+    background-color: white;
+    /* Change box-shadow to something ligther because unlike blocks we don't want it to look like the box is draggable */
+    box-shadow: var(--box-shadow-item-light);
+}
+
+.field-group,
+.field-group.closed {
+    padding-top: 0;
+}
+
+/* GROUP ORGANISMS / EDITOR / FIELD GROUPS / CLOSED
+=================================================== */
+.field-group.closed .summary {
+    /* Prevent dt elements clashing into each other (issue with default Perch admin CSS) */
+    display: grid;
+}
+
+.field-group.closed .summary dt,
+.field-group.closed .summary dd {
+    /* Put some space in between summary elements */
+    margin-bottom: var(--rhythm-s-0);
+}
+
+.field-group-label {
+    margin: 0 24px 12px 24px;
+    color: var(--colour-perch-grey-dark);
+}
+
+.field-group .divider-toggle {
+    margin-right: var(--rhythm-s);
+}
+
+
+
+
+/* GROUP ORGANISMS / GENERAL
+=================================================== */
+/* e.g. Used as a default "About" container in the app sample found here: https://static.grabaperch.com/docs/api/my_sample_v2.1.zip */
+.compat-container {
+    padding-top: var(--rhythm-l-1);
+    max-width: var(--max-width-reading);
+}
+
+.compat-container h1 {
+    font-family: var(--font-family-main);
+    font-weight: var(--font-family-main-weight-strong);
+}
+
+.compat-container p + h1 {
+    padding-top: var(--rhythm-m);
+}
+
+.compat-container li {
+    padding-bottom: var(--rhythm-s-1);
+}
+
+.compat-container li ul {
+    padding-top: var(--rhythm-s);
+}
+
+.compat-container li li {
+    padding-bottom: var(--rhythm-s-0);
+}
+
+.compat-container code {
+    background: #f1f1f1;
+    margin-right: var(--rhythm-s-0);
+    margin-left: var(--rhythm-s-0);
+}
+
+.compat-container strong,
+.compat-container strong a {
+    color: #00a8ef;
+}
+
+
+
+
+/* GROUP ORGANISMS / ADMIN WRITING
+=================================================== */
+textarea,
+textarea.input-simple,
+body .redactor-styles {
+    font-family: var(--font-family-textarea);
+    color: var(--colour-text);
+    /* Increase */
+    font-size: 1em;
+}
+
+/* GROUP ORGANISMS / ADMIN WRITING / REDACTOR SPECIFIC
+=================================================== */
+html body .form-entry .editor-wrap div.redactor-styles {
+    /* Increase */
+    padding: 1.5em;
+}

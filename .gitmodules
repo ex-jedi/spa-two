@@ -1,0 +1,3 @@
+[submodule "perch/core"]
+	path = perch/core
+	url = git@github.com:ex-jedi/perch-core-files.git

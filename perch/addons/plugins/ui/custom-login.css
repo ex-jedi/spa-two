@@ -1,0 +1,26 @@
+.page-login {
+  background-color: #eef3f4;
+}
+
+h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700 !important;
+}
+
+.topbar h1 {
+  color: #756c91;
+}
+
+label,
+.field-wrap,
+.input-simple,
+.button-simple,
+.reset-link {
+  font-size: 17px !important;
+  color: #756c91 !important;
+  font-weight: bold;
+}
+
+.button-simple {
+  border: 1px solid #ccc !important;
+}

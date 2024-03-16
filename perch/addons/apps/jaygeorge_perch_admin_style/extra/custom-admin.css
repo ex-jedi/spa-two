@@ -1,0 +1,87 @@
+/* Uncomment this selector to hide/show the admin style menu in the Perch admin */
+/* .appmenu [href*="jaygeorge_perch_admin_style"] {
+    clip: rect(1px, 1px, 1px, 1px);
+
+    position: absolute!important;
+    overflow: hidden;
+    width: 1px;
+    height: 1px;
+} */
+/* Alternatively if you want to hide it completely so it's not in the document flow you can use: */
+/* .appmenu [href*="jaygeorge_perch_admin_style"] {
+    display: none;
+} */
+
+/* Redefine/override any CSS variables here */
+body {
+    /* GROUP VARIABLES -- DECORATION -- COLOURS -- THEME
+    =================================================== */
+    --colour-main: #222;
+    --colour-main-rgb: 34, 34, 34;
+    --colour-text: #333;
+    --colour-main-hover: #000;
+    /* GROUP VARIABLES -- DECORATION -- TEXT
+    =================================================== */
+    /*--font-family-main: source-sans-pro, sans-serif;*/
+    /*--font-family-textarea: some-font, serif;*/
+    /* GROUP VARIABLES -- DECORATION -- TEXT -- WEIGHTS
+    =================================================== */
+    /*--font-family-main-weight-normal: 400;*/
+    /*--font-family-main-weight-strong: 600;*/
+}
+
+/* Some theme options - delete these if you don't want to use them */
+
+/* GROUP ATOMS / DECORATION / TEXT / LINK STYLES {/ LINKS} / ACCESSIBILITY / FOCUS
+=================================================== */
+a:focus {
+    background: rgba(var(--colour-main-rgb),0.3);
+    outline: 3px solid rgba(var(--colour-main-rgb),0.3);
+}
+/* GROUP ATOMS / BUTTONS / ACCESSIBILITY / FOCUS
+=================================================== */
+.sidebar-back a:focus,
+/* a*/.button:focus {
+    outline: 3px solid var(--colour-main);
+}
+
+/* GROUP THEME / LIGHT BUTTONS
+=================================================== */
+/* Notes...
+
+    This works well if you're going for a minimal look
+
+*/
+/*.c-skip-to-content {
+    --colour-focus: yellow;
+}
+
+.button.to-the-top:hover,
+.title-panel .button:hover,
+.title-panel .button-icon:hover,
+.title-panel .button-icon.active {
+    color: black;
+}
+
+.button.to-the-top.button-icon:hover svg,
+.title-panel .button:hover svg,
+.title-panel .button.active svg {
+    fill: black;
+}
+
+.sidebar-back a:hover,
+.sidebar-back a:focus {
+    border: 1px solid var(--colour-perch-border-grey);
+}
+
+.sidebar-back .back {
+    background: var(--colour-perch-button-secondary);
+    border: 1px solid var(--colour-perch-border-grey);
+    color: var(--colour-black-off);
+}
+
+.sidebar-back .icon {
+    fill: var(--colour-black-off);
+}*/
+
+/* Add any brand specific CSS here */

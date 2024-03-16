@@ -1,0 +1,12 @@
+<div class="footer-contact-details-wrapper">
+  <p class="footer-contact-details-paragraph" itemprop="telephone">
+    <a itemprop="telephone" href="<perch:content id="addressTelephone" filter="phone" output="tel_link" label="Phone Number">">
+      <perch:content id="addressTelephone" filter="phone" output="national">
+    </a>
+  </p>
+  <p class="footer-contact-details-paragraph" itemprop="email">
+    <a href="mailto:<perch:content id="addressEmail" type="text" label="Email Address" required>">
+      <perch:content id="addressEmail">
+    </a>
+  </p>
+</div>

@@ -1,0 +1,71 @@
+:root {
+    /* Notes...
+
+    If you wish to modify any variables you should override them in your `custom-admin.css` file instead. Do not change them here because they'll be overwritten if you update.
+
+    */
+    /* GROUP VARIABLES -- RHYTHM
+    =================================================== */
+    --rhythm-s-0-0: 0.4rem;
+    --rhythm-s-0: 0.5rem;
+    --rhythm-s: 0.8rem;
+    --rhythm-s-1: 1.1rem;
+    --rhythm-s-2: 1.35rem;
+
+    --rhythm-m: 1.5rem;
+
+    --rhythm-m-1: 1.8rem;
+
+    --rhythm-l: 2rem;
+
+    --rhythm-l-1: 2.5rem;
+    --rhythm-l-2: 2.8rem;
+
+    --rhythm-perch-main-gutters: 24px;
+    /* GROUP VARIABLES -- LAYOUT -- CONSTRAINTS -- MAX
+    =================================================== */
+    --max-width-reading: 42rem;
+    /* GROUP VARIABLES -- DECORATION -- COLOURS -- PERCH
+    =================================================== */
+    --colour-perch-border-grey: #e9eaea;
+    --colour-perch-button-secondary: #f9f9f9;
+    --colour-perch-background-grey-light: #fcfcfc;
+    --colour-perch-grey-dark: #4d4d4d;
+    /* GROUP VARIABLES -- DECORATION -- COLOURS -- THEME
+    =================================================== */
+    --colour-main: #222;
+    --colour-main-hover: #000;
+    --colour-grey: #ccc;
+    --colour-text: #333;
+    /* Used on focus elements */
+    --colour-focus: yellow;
+    --colour-select: #00bb77;
+    --colour-select-rgb: 0, 187, 119;
+    /* Useful alternative if your colour scheme uses greens. Paste the below into your `custom-admin.css` (do not uncomment here because it'll be overwritten if you update) */
+    /* --colour-success: dodgerblue; */
+    --colour-success: #18bb9c;
+    --colour-fail: #e3315b;
+    --colour-fail-hover: #c32c50;
+    /* GROUP VARIABLES -- DECORATION -- COLOURS -- THEME -- GRADIENTS
+    =================================================== */
+    --colour-gradient-white: linear-gradient(to bottom, rgba(255,255,255,0) 0%,#fbfbfb 300%);
+    /* GROUP VARIABLES -- DECORATION -- SEPARATORS -- BOX SHADOWS - ordered from light to dark variants
+    =================================================== */
+    --box-shadow-item: 0px 5px 10px rgba(0,0,0,0.1);
+    --box-shadow-item-light: 0 5px 10px rgba(0, 0, 0, 0.05);
+    --box-shadow-item-left: -10px 0 9px -8px rgba(0, 0, 0, 0.1);
+    --box-shadow-b: 0 10px 9px -8px rgba(0, 0, 0, 0.2);
+    --box-shadow-b-light: 0 10px 9px -8px rgba(0, 0, 0, 0.05);
+    /* GROUP VARIABLES -- DECORATION -- TEXT -- WEIGHTS
+    =================================================== */
+    --font-family-main-weight-normal: 400;
+    --font-family-main-weight-strong: 600;
+}
+/* --mq-root-variable-adjustments */
+@media (min-width: 1100px) {
+    :root {
+        /* GROUP VARIABLES -- RHYTHM
+        ===================================================  */
+        --rhythm-s: 0.85rem;
+    }
+}

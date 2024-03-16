@@ -1,0 +1,3 @@
+Replace Folder with latest version of Perch
+
+Add project's DeployHQ public key to Github profile SSH keys.

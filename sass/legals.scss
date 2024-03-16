@@ -1,0 +1,49 @@
+// *=======================================================================================
+// ** Error Page Styles  **
+// *=======================================================================================
+
+//*=========================================
+//** Imports **
+//*=========================================
+
+@use 'bits' as *; //Contains variables, media queries mixins etc.
+
+.legals-page-section {
+  background-color: $background-colour-one;
+  padding: $section-spacing-large;
+  color: $font-colour-dark;
+
+  h2,
+  h3 {
+    font-size: $font-size-large;
+  }
+
+  p {
+    font-size: $font-size-medium;
+  }
+
+  @include breakpoint(1100) {
+    padding: $section-spacing-medium $section-spacing-small;
+  }
+
+  @include breakpoint(750) {
+    padding: $section-spacing-small $header-spacing-tiny;
+
+    p {
+      font-size: $font-size-small;
+    }
+  }
+}
+
+h1 {
+  margin: $section-spacing-large 1rem 0;
+  color: $font-colour-dark;
+
+  @include breakpoint(1100) {
+    margin: $section-spacing-medium 1rem 0;
+  }
+
+  @include breakpoint(750) {
+    margin: $section-spacing-small 1rem 0;
+  }
+}
